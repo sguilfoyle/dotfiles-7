@@ -1,33 +1,32 @@
 ! New colorset
 
 *foreground: #e3e3e3
-*background: #151515
+*background: #171717
 
- 
-!Negro-----------
+ !black
 *color0: #353535
 *color8: #353535
-!Red
-*color1: #a2363a
-*color9: #ff5b62
-!!Green
-*color2: #3ca034
-*color10: #3ed421
-!!Yellow
-*color3: #b3930f
-*color11: #f1c719
-!!Blue
-*color4: #A6E2F0
-*color12: #79D2FF
-!!Magenta
-*color5: #746d76
-*color13: #b287ba
-!!Cyan		      
-*color6: #42ab9e
-*color14: #9bc6c0
-!!White
-*color7: #c0c0c0
-*color15: #ffffff
+!red    
+*color1:    #B24747
+*color9:    #B24747
+!green
+*color2:    #47B247
+*color10:   #47B247
+!yellow
+*color3:    #B2B247
+*color11:   #B2B247
+!blue
+*color4:    #476BB2
+*color12:   #476BB2
+!magenta    
+*color5:    #B247B2
+*color13:   #B247B2
+!cyan
+*color6:    #47B2B2
+*color14:   #47B2B2
+!white
+*color7:    #AAAAAA
+*color15:   #AAAAAA
 
 URxvt*font: xft:lime:pixelsize=6:antialias=true:hinting=true
 URxvt*boldFont: xft:lime:pixelsize=6:antialias=true:hinting:true
