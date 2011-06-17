@@ -1,0 +1,65 @@
+! New colorset
+
+*foreground: #e3e3e3
+*background: #191919
+
+ 
+!Negro-----------
+*color0: #353535
+*color8: #353535
+!Rojo------------
+*color1: #FF8EAF
+*color9: #ED4C7A
+!Verde------------
+*color2:  #A6E25F
+*color10: #A6E179
+!Amarillo---------
+*color3: #F8E578
+*color11: #FFDF6B
+!Azul-------------
+*color4: #A6E2F0
+*color12: #79D2FF
+!Magenta----------
+*color5: #E85B92
+*color13: #BB5D79
+!Cyan-------------
+*color6: #5F868F
+*color14: #87A8AF
+!Blanco-----------
+*color7: #D5F1F2
+*color15: #E2F1F6
+
+
+
+
+ #URxvt*foreground:Gray
+ #URxvt*background:#000000
+
+URxvt*font: xft:lime:pixelsize=6:antialias=true:hinting=true
+URxvt*boldFont: xft:lime:pixelsize=6:antialias=true:hinting:true
+!URxvt*font: xft:Fixed:pixelsize=9
+!URxvt*boldFont: xft:Fixed:pixelsize=9
+
+URxvt*buffered: true
+
+URxvt*cursorBlink: false
+URxvt*cursorUnderline: false
+
+URxvt*geometry: 75x15
+URxvt*internalBorder: 3
+
+!URxvt*reverseVideo: true
+
+URxvt*depth: 24
+
+URxvt*scrollBar: false
+URxvt*scrollBar_right: true
+URxvt*scrollstyle: plain
+URxvt*scrollColor: #2873a2
+URxvt*scrollWithBuffer: false
+URxvt*scrollTtyOutput: true
+
+URxvt*urgentOnBell: true
+!URxvt*visualBell: true
+
+URxvt*pointerBlank: true
