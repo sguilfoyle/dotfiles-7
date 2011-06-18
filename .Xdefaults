@@ -1,18 +1,18 @@
 ! New colorset
 
-*foreground: #AAAAAA
+*foreground: #808080
 *background: #151515
 
 
 !black
-*color0: #3b3b3b
-*color8: #2a2a29
+*color0: #353535
+*color8: #353535
 !red
 *color1: #ba4d4d
 *color9: #984040
 !green
-*color2: #94c19b
-*color10: #7b9f81
+*color2: #bdf271
+*color10: #ffffa6
 !yellow
 *color3: #d7cd94
 *color11: #b3ab7c
@@ -26,9 +26,8 @@
 *color6: #989081
 *color14: #827c6f
 !white
-*color7: #eae8e6
-*color15: #cfcdcc
-
+*color7: #666666
+*color15: #cccccc
 
 
 URxvt*font: xft:lime:pixelsize=6:antialias=false:hinting=false
