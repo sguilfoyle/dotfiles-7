@@ -22,13 +22,13 @@ set :resize, false
 set :strut, [ 0, 0, 0, 0 ]
 
 # Font string either take from e.g. xfontsel or use xft
-set :font, "xft:pragmata-8"
+set :font, "xft:pragmata:pixelsize=9:antialias=true:hinting:true"
 
 # Space around windows
-set :gap, 5
+set :gap, 3
 
 # Panel size padding (left, right, top, bottom)
-set :padding, [ 0, 0, 0, 0 ]
+set :padding, [ 0, 0, 2, 2 ]
 
 # Separator between sublets
 set :separator, "|"
@@ -41,51 +41,51 @@ set :outline, 0
 # == Screen
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, ]
+  top    [ :views, :separator, :title, :spacer, :keychain, :spacer, :tray, :separator, :memory, :separator, :cpu, :separator, :pacman, :separator, :mpd, :separator, :fuzzytime, :separator, :layout, ]
   bottom [ ]
 end
 
 # == Colors
 
 # Colors of focus window title
-color :title_fg,        "#B2B247"
+color :title_fg,        "#909090"
 color :title_bg,        "#202020"
-color :title_border,    "#303030"
+color :title_border,    "#202020"
 
 # Colors of the active views
-color :focus_fg,        "#B2B247"
+color :focus_fg,        "#e6e6e6"
 color :focus_bg,        "#202020"
 color :focus_border,    "#202020"
 
 # Colors of urgent window titles and views
-color :urgent_fg,       "#B24747"
+color :urgent_fg,       "#d7cd94"
 color :urgent_bg,       "#202020"
 color :urgent_border,   "#202020"
 
 # Colors of occupied views (views with clients)
-color :occupied_fg,     "#AAAAAA"
+color :occupied_fg,     "#707070"
 color :occupied_bg,     "#202020"
 color :occupied_border, "#202020"
 
 # Color of view buttons
-color :views_fg,        "#757575"
+color :views_fg,        "#303030"
 color :views_bg,        "#202020"
 color :views_border,    "#202020"
 
 # Colors of sublets
-color :sublets_fg,      "#757575"
+color :sublets_fg,      "#AAAAAA"
 color :sublets_bg,      "#202020"
 color :sublets_border,  "#202020"
 
 # Border colors of active/inactive windows
-color :client_active,   "#757575"
-color :client_inactive, "#202020"
+color :client_active,   "#e3e3e3"
+color :client_inactive, "#404040"
 
 # Background colors of panels
 color :panel,           "#202020"
 
 # Background color of root background
-color :background,      "#303030"
+color :background,      "#707070"
 
 # Color of the stipple (if enabled)
 color :stipple,         "#757575"
@@ -299,6 +299,7 @@ end
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
 tag "browser", "uzbl|opera|firefox|navigator"
+tag "filem",   "thunar" 
 
 # Placement
 tag "editor" do
@@ -353,6 +354,7 @@ end
 view "terms",       "terms|default"
 view "code",        "editor"
 view "browser",     "browser"
-view "misc",        "gimp_.*"
+view "misc",        "gimp_.*|filem"
 
 
+#  vim: set ts=2 sw=2 tw=0 :
