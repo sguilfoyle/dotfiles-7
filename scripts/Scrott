@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCROTDIR="$HOME/Images/myscreens"
+
+CURR=`date +%Y-%m-%d_%H-%M`
+FILE=${SCROTDIR}${CURR}
+
+scrot -d 5 $FILE.png
+
+sleep 1
+
+optipng $FILE.png
+
+~/scripts/scrompit $FILE.png

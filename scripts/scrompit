@@ -1,0 +1,68 @@
+#!/bin/bash
+# Script to take a screenshot, upload to ompldr and produce the link
+#
+# Depends: egrep/grep, curl and scrot
+# Optional: xclip and/or xsel
+#
+# Usage 1: ompit  
+#  - Will take a fresh screenshot and remove it after uploading
+#
+# Usage 2: ompit [path to image]
+#  - Will not remove image after uploading
+#  - Also works with non-image files
+#
+# By: Corey Prophitt
+
+# Root check, if you desire
+#if [ "$UID" -ne 0 ]; then
+#  echo "Usage: must run as root."
+#  exit
+#fi
+
+if [ $# == 0 ]; then
+  screen_path="/tmp/screen.png"
+else
+  if [ -e $1 ]; then
+    screen_path="$1"
+  else
+    echo "Invalid file specified."
+    exit
+  fi
+fi
+
+# Use scrot only if screen_path isn't specificed 
+if [ $# == 0 ]; then
+  # Use scrot to capture screen
+  if builtin type -p scrot &>/dev/null; then
+    [ -e "$screen_path" ] && rm -rf $screen_path
+    scrot "$screen_path"
+  else
+    echo "You need to install scrot."
+    exit
+  fi
+fi
+
+# upload screenshot and extract link -- faster way exists? 
+if builtin type -p curl &>/dev/null; then
+  link=`curl -s -F file1=@"$screen_path" -F submit=\"OMPLOAD\!\" http://ompldr.org/upload | egrep '(View file:)' | grep -o http://ompldr.org/[a-z/.A-Z0-9]*`
+else
+  echo "You need to install curl."
+  exit
+fi
+
+# Copy link to middle click and clipboard (with xclip or xsel)
+if builtin type -p xclip &>/dev/null; then
+  echo $link | tr -d "\n" | xclip 
+  echo $link | tr -d "\n" | xclip -selection c  
+else
+  if builtin type -p xsel &>/dev/null; then
+    echo $link | tr -d "\n" | xsel
+    echo $link | tr -d "\n" | xsel -b
+  fi
+fi
+
+# clean up and exit
+[ $# == 0 ] && rm -rf "$screen_path"
+
+echo -e "$link\a"
+exit
